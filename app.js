@@ -14,6 +14,7 @@ var rumahSakitRouter = require('./routes/rumah_sakit');
 var bakteriRouter = require('./routes/bakteri');
 var antibiotikRouter = require('./routes/antibiotik');
 var dokterRouter = require('./routes/dokter');
+var pasienRouter = require('./routes/pasien');
 
 var app = express();
 
@@ -33,5 +34,6 @@ app.use('/rumah_sakit', rumahSakitRouter);
 app.use('/bakteri', bakteriRouter);
 app.use('/antibiotik', antibiotikRouter);
 app.use('/dokter', dokterRouter);
+app.use('/pasien', pasienRouter);
 
 module.exports = app;
