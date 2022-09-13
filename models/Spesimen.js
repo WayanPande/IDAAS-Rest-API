@@ -1,14 +1,16 @@
 module.exports = (sequelize, DataTypes) => {
-    const antibiotik = sequelize.define('Antibiotik', {
+    const spesimen = sequelize.define('Spesimen', {
         id: {
             type: DataTypes.INTEGER,
             primaryKey: true,
             autoIncrement: true,
             allowNull: false,
         },
+        id_visitasi: {
+            type: DataTypes.INTEGER,
+        },
         name: {
             type: DataTypes.STRING,
-            allowNull: false,
         },
         createdAt: {
             type: DataTypes.DATE,
@@ -19,16 +21,14 @@ module.exports = (sequelize, DataTypes) => {
             allowNull: false
         },
     }, {
-        tableName: 'antibiotik',
+        tableName: 'spesimen',
     });
 
-    antibiotik.associate = models => {
+    spesimen.associate = models => {
 
-        antibiotik.hasMany(models.Antibiotik_Sensitif, { foreignKey: 'id_antibiotik', as: 'nama_antibiotik_sensitif' });
-
-        antibiotik.hasMany(models.Pemberian_Antibiotik, { foreignKey: 'id_antibiotik', as: 'antibiotik' });
+        spesimen.belongsTo(models.Visitasi, { foreignKey: 'id_visitasi', as: 'spesimen' });
 
     }
 
-    return antibiotik;
+    return spesimen;
 }

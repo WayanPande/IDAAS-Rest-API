@@ -1,5 +1,3 @@
-const Spesialis = require("./Spesialis");
-
 module.exports = (sequelize, DataTypes) => {
     const dokter = sequelize.define('Dokter', {
         id: {

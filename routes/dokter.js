@@ -29,7 +29,7 @@ router.get('/', async (req, res) => {
                 as: 'puskesmas'
             },
         ],
-        attributes: { exclude: ['klinik'] },
+        attributes: { exclude: ['klinik_id', 'jenis_spesialis_id', 'rumah_sakit_id', 'poliklinik_id', 'puskesmas_id'] },
     });
     return res.json(dokter);
 });
@@ -39,10 +39,6 @@ router.post('/', async (req, res) => {
     return res.json(dokter);
 });
 
-
-// router.get('/id', async (req, res)=>{
-//     const dokter = await Dokter.query("SELECT * FROM dokter INNER JOIN spesialis ON dokter.jenis_spesialis = spesialis.id")
-// });
 
 
 module.exports = router;

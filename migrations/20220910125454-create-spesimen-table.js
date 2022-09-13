@@ -11,11 +11,9 @@ module.exports = {
       },
       id_visitasi: {
         type: Sequelize.INTEGER,
-        allowNull: false,
       },
       name: {
         type: Sequelize.STRING,
-        allowNull: false,
       },
       createdAt: {
         type: Sequelize.DATE,
