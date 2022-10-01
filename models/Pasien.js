@@ -29,6 +29,10 @@ module.exports = (sequelize, DataTypes) => {
         komorbid: {
             type: DataTypes.STRING,
         },
+        id_dokter: {
+            type: DataTypes.INTEGER,
+            allowNull: false
+        },
         createdAt: {
             type: DataTypes.DATE,
             allowNull: false

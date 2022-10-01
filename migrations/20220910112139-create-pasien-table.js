@@ -31,6 +31,10 @@ module.exports = {
       komorbid: {
         type: Sequelize.STRING,
       },
+      id_dokter: {
+        type: Sequelize.INTEGER,
+        allowNull: false
+      },
       createdAt: {
         type: Sequelize.DATE,
         allowNull: false
